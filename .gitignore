@@ -1,0 +1,7 @@
+figures
+*.asv
+*slprj
+*.slxc
+*.slx.*
+results
+example/data
