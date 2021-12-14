@@ -1,9 +1,19 @@
 # Discrete Fully-Probabilistic Design (D-FPD)
 
+## Introduction and related publications
+
+D-FPD is a numerical/discrete version of an algorithm from [1]: this latter algorithm can tackle both discrete and continuous control problems by finding an analytical solution. D-FPD instead finds a purely numerical solution. As the original algorithm, the numerical/discrete implementation of D-FPD can be used to compute policies from examples for constrained, possibly stochastic/nonlinear, systems.
+
+A detailed description of the D-FPD algorithm is available in the [accompanying paper](paper.pdf):
+
+E. Ferrentino, P. Chiacchio, G. Russo, "The discrete fully probabilistic design algorithm: a tool to design control policies from examples". 2021.
+
+## The code at a glance
+
 This MATLAB repo is composed of two classes of scripts:
 
 * **Proof-of-concept**: set of scripts to demonstrate how D-FPD works and compare it with the continuous counterpart
-* **Inverse pendulum example**: set of scripts to demonstrate the effectiveness of D-FPD in generating a data-driven control policy on an inverted pendulum
+* **Inverted pendulum example**: set of scripts to demonstrate the effectiveness of D-FPD in generating a data-driven control policy on an inverted pendulum
 
 ## Executing proof-of-concept scripts
 
@@ -31,7 +41,7 @@ Most of the scripts for this use case are contained in the `example` folder.
 
 ### Data generation
 
-Data are generated with model-based controllers for both the reference (teacher) and target (student) pendulum. Controllers are given a time-varying trajectory reference bringing the pendulums to the unstable equilibrum state with randomized time parametrizations.
+Data are generated with a model-based controller. The controller is given a time-varying trajectory reference bringing the pendulums to the unstable equilibrum state with randomized time parametrizations.
 
 The actuated pendulum is made noisy through the introduction of a Gaussian noise acting at acceleration level.
 
@@ -51,7 +61,7 @@ The data files above can be used to generate a probabilistic model:
 demo_probabilistic_model_generation
 ```
 
-The script generates a data file containing the state evolution models, the reference's randomized control law, while the target's model-based control law is ignored. The output data file will also contain information about the discretization of states and input. If you do not want to re-generate this data file, you can use that already available in this repo.
+The script generates a data file containing the state evolution models and the reference's randomized control law. The output data file will also contain information about the discretization of states and input. If you do not want to re-generate this data file, you can use that already available in this repo.
 
 ### D-FPD optimization
 
@@ -78,3 +88,11 @@ demo_noisy_pendulum_validation
 ```
 
 The script above will also launch the simulation showing the pendulum evolution subject to the probabilistic control policy.
+
+## Authors and contributors
+
+* Enrico Ferrentino (author)
+
+## References
+
+[1] Davide Gagliardi and Giovanni Russo. On a probabilistic approach to synthesize control policies from example datasets. _Automatica_, (in press), 2021. URL: [https://arxiv.org/pdf/2005.11191.pdf](https://arxiv.org/pdf/2005.11191.pdf).
