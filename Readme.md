@@ -4,9 +4,9 @@
 
 D-FPD is a numerical/discrete version of an algorithm from [1]: this latter algorithm can tackle both discrete and continuous control problems by finding an analytical solution. D-FPD instead finds a purely numerical solution. As the original algorithm, the numerical/discrete implementation of D-FPD can be used to compute policies from examples for constrained, possibly stochastic/nonlinear, systems.
 
-A detailed description of the D-FPD algorithm is available in the [accompanying paper](paper.pdf):
+Refer to the [accompanying paper](paper.pdf) for more information:
 
-E. Ferrentino, P. Chiacchio, G. Russo, "The discrete fully probabilistic design algorithm: a tool to design control policies from examples". 2021.
+_E. Ferrentino, P. Chiacchio, G. Russo, "The discrete fully probabilistic design algorithm: a tool to design control policies from examples". 2021._
 
 ## The code at a glance
 
