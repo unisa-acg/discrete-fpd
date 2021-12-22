@@ -6,7 +6,7 @@ D-FPD is a numerical/discrete version of an algorithm from [1]: this latter algo
 
 Refer to the [accompanying paper](paper.pdf) for more information:
 
-_E. Ferrentino, P. Chiacchio, G. Russo, "The discrete fully probabilistic design algorithm: a tool to design control policies from examples". 2021. E-print URL: [https://arxiv.org/abs/2112.11210](https://arxiv.org/abs/2112.11210)._
+_E. Ferrentino, P. Chiacchio, G. Russo, "Discrete fully probabilistic design: a tool to design control policies from examples". 2021. E-print URL: [https://arxiv.org/abs/2112.11210](https://arxiv.org/abs/2112.11210)._
 
 ## The code at a glance
 
