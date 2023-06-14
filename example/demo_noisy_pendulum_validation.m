@@ -94,5 +94,5 @@ xlabel('Time (s)');
 ylabel('Velocity (rad/s)');
 
 % Save results of simulation for further analyses
-save(['./data/pendulum_dfpd_validation_' datestr(datetime('now'), 'yymmddTHHMMSS')], 'simulation');
+save(['./data/pendulum_dfpd_validation_' datestr(datetime('now'), 'yymmddTHHMMSS')], 'simulation_target');
 
