@@ -28,11 +28,12 @@ end
 load(control_policy_file);
 
 model_based_control = 0;
+pendulum_model_name = 'target_pendulum_setup';
 data_driven_controller_block = [pendulum_model_name '/data_driven_controller_block'];
 reference_block = [pendulum_model_name '/Reference'];
 
 % Setup Simulink simulation for target system
-load_system('target_pendulum_setup');
+load_system(pendulum_model_name);
 
 set_param(data_driven_controller_block,'commented','off');
 set_param(reference_block,'commented','on');
@@ -41,7 +42,11 @@ set_param(reference_block,'commented','on');
 simulation_target = sim('target_pendulum_setup');
 
 % Setup Simulink simulation for reference system
-load_system('reference_pendulum_setup');
+pendulum_model_name = 'reference_pendulum_setup';
+data_driven_controller_block = [pendulum_model_name '/data_driven_controller_block'];
+reference_block = [pendulum_model_name '/Reference'];
+
+load_system(pendulum_model_name);
 
 set_param(data_driven_controller_block,'commented','off');
 set_param(reference_block,'commented','on');
